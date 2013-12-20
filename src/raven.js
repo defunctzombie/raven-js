@@ -1,5 +1,7 @@
 'use strict';
 
+var TK = require('tracekit');
+
 // First, check for JSON support
 // If there is no JSON, we no-op the core features of Raven
 // since JSON is required to encode the payload
@@ -20,8 +22,6 @@ var _Raven = window.Raven,
         tags: {},
         extra: {}
     };
-
-var TK = TraceKit.noConflict();
 
 // Disable Tracekit's remote fetching by default
 TK.remoteFetching = false;

@@ -8,6 +8,9 @@
     "type": "git",
     "url": "git://github.com/getsentry/raven-js.git"
   },
+  "dependencies": {
+    "tracekit": "0.1.0"
+  },
   "devDependencies": {
     "chai": "~1.8.1",
     "grunt": "~0.4.1",
