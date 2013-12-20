@@ -2,11 +2,12 @@
 
 var TK = require('tracekit');
 
+var VERSION = '1.1.3';
+
 // First, check for JSON support
 // If there is no JSON, we no-op the core features of Raven
 // since JSON is required to encode the payload
-var _Raven = window.Raven,
-    hasJSON = !!(window.JSON && window.JSON.stringify),
+var hasJSON = !!(window.JSON && window.JSON.stringify),
     lastCapturedException,
     globalServer,
     globalUser,
@@ -32,7 +33,7 @@ TK.remoteFetching = false;
  * @this {Raven}
  */
 var Raven = {
-    VERSION: '<%= pkg.version %>',
+    VERSION: VERSION,
 
     // Expose TraceKit to the Raven namespace
     TraceKit: TK,
@@ -57,7 +58,6 @@ var Raven = {
      * @return {Raven}
      */
     noConflict: function() {
-        window.Raven = _Raven;
         return Raven;
     },
 
@@ -647,3 +647,5 @@ function joinRegExp(patterns) {
 }
 
 Raven.afterLoad();
+
+module.exports = Raven;
