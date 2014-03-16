@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/getsentry/raven-js.git"
+    "url": "git://github.com/defunctzombie/raven-js.git"
   },
   "devDependencies": {
     "chai": "~1.8.1",
