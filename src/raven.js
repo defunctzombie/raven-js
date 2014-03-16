@@ -28,7 +28,7 @@ var _Raven = window.Raven,
  * @this {Raven}
  */
 var Raven = {
-    VERSION: '<%= pkg.version %>',
+    VERSION: '1.1.11',
 
     // Expose TraceKit to the Raven namespace
     TraceKit: TraceKit,
