@@ -1,5 +1,7 @@
 'use strict';
 
+var TraceKit = require('../vendor/TraceKit/tracekit');
+
 // First, check for JSON support
 // If there is no JSON, we no-op the core features of Raven
 // since JSON is required to encode the payload
@@ -377,17 +379,6 @@ function isEmptyObject(what) {
     return true;
 }
 
-/**
- * hasKey, a better form of hasOwnProperty
- * Example: hasKey(MainHostObject, property) === true/false
- *
- * @param {Object} host object to check property
- * @param {string} key to check
- */
-function hasKey(object, key) {
-    return Object.prototype.hasOwnProperty.call(object, key);
-}
-
 function each(obj, callback) {
     var i, j;
 
@@ -697,3 +688,4 @@ function generateUUID4() {
 }
 
 Raven.afterLoad();
+module.exports = Raven;

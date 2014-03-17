@@ -14,6 +14,24 @@ var TraceKit = {
 var _slice = [].slice;
 var UNKNOWN_FUNCTION = '?';
 
+/**
+ * hasKey, a better form of hasOwnProperty
+ * Example: hasKey(MainHostObject, property) === true/false
+ *
+ * @param {Object} host object to check property
+ * @param {string} key to check
+ */
+function hasKey(object, key) {
+    return Object.prototype.hasOwnProperty.call(object, key);
+}
+
+function isString(what) {
+    return typeof what === 'string';
+}
+
+function isUndefined(what) {
+    return typeof what === 'undefined';
+}
 
 /**
  * TraceKit.wrap: Wrap any function in a TraceKit reporter
@@ -1070,3 +1088,5 @@ TraceKit.computeStackTrace = (function computeStackTraceWrapper() {
 
     return computeStackTrace;
 }());
+
+module.exports = TraceKit;
